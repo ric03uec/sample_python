@@ -27,7 +27,6 @@ build:
     - echo $SHIPPABLE_BUILD_NUMBER > $SHIPPABLE_BUILD_DIR/build_number
     - env
     - echo $PATH
-    - reports --help
     - python --version
     - sleep 10
     - mkdir -p shippable/testresults
