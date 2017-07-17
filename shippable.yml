@@ -49,16 +49,16 @@ build:
   on_success:
     - echo "The job succeeded!!!!"
 
-integrations:
-  notifications:
-    - integrationName: email
-      type: email
-      recipients:
-        - devashish@shippable.com
-      on_success: always
-      on_failure: always
-      on_pull_request: never
-      on_start: never
+#integrations:
+#  notifications:
+#    - integrationName: email
+#      type: email
+#      recipients:
+#        - devashish@shippable.com
+#      on_success: always
+#      on_failure: always
+#      on_pull_request: never
+#      on_start: never
 
 #integrations:
 #  notifications:
