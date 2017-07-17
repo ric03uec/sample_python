@@ -16,7 +16,7 @@ build:
     - $SHIPPABLE_BUILD_DIR/
     
   pre_ci_boot:
-    image_name: drydock/u14nodall
+    image_name: ric03uec/u14nodall
     image_tag: v5.6.3
     pull: true
     options: '--privileged=true --tty --net=bridge -e FOO=true -e BOO=false'
