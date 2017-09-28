@@ -32,6 +32,7 @@ build:
     - sudo docker --version
     - sudo docker ps -a
     - python $SHIPPABLE_BUILD_DIR/ttyTest.py
+    - sudo docker pull drydock/genexec:master
     
   push:
     - echo "PUSH step done"
