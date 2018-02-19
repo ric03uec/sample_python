@@ -15,6 +15,10 @@ build:
   cache_dir_list:
     - $SHIPPABLE_BUILD_DIR/
     
+  pre_ci_boot:
+    image_name: library/nginx
+    image_tag: latest
+    
   ci:
     - echo "Hello, World!"
     - cat $SHIPPABLE_BUILD_DIR/build_number || true
