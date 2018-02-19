@@ -16,7 +16,7 @@ build:
     - $SHIPPABLE_BUILD_DIR/
     
   pre_ci_boot:
-    image_name: library/nginx
+    image_name: library/alpine:3.5
     image_tag: latest
     
   ci:
