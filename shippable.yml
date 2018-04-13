@@ -19,7 +19,7 @@ build:
     
   pre_ci_boot:
     image_name: ric03uec/centos    ##replace with your repo and image name
-    image_tag: latest
+    image_tag: shippable
     
   ci:
     - uname -a
