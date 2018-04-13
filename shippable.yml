@@ -18,7 +18,7 @@ build:
     - $SHIPPABLE_BUILD_DIR/
     
   pre_ci_boot:
-    image_name: library/centos    ##replace with your repo and image name
+    image_name: ric03uec/centos    ##replace with your repo and image name
     image_tag: latest
     
   ci:
