@@ -9,13 +9,20 @@ python:
  # - 3.3
  # - 3.5
   
+runtime:
+  nodePool: custom__x86_64__CentOS_7
   
 build:
   cache: true
   cache_dir_list:
     - $SHIPPABLE_BUILD_DIR/
     
+  pre_ci_boot:
+    image_name: library/centos    ##replace with your repo and image name
+    image_tag: latest
+    
   ci:
+    - uname -a
     - echo "Hello, World!"
     - cat $SHIPPABLE_BUILD_DIR/build_number || true
     - echo $SHIPPABLE_BUILD_NUMBER > $SHIPPABLE_BUILD_DIR/build_number
