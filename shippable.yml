@@ -9,8 +9,8 @@ python:
  # - 3.3
  # - 3.5
   
-#runtime:
-#  nodePool: custom__x86_64__CentOS_7
+runtime:
+  nodePool: cus_u16
   
 build:
   cache: true
