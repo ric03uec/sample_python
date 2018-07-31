@@ -13,7 +13,7 @@ python:
 #  nodePool: cus_aarch_u16
   
 build:
-#  cache: true
+  cache: true
   cache_dir_list:
     - $SHIPPABLE_BUILD_DIR/
     
