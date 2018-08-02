@@ -15,7 +15,7 @@ python:
 build:
   cache: true
   cache_dir_list:
-    - $SHIPPABLE_BUILD_DIR/
+    - $SHIPPABLE_BUILD_DIR/shippable.yml
     
   #pre_ci_boot:
   #  image_name: ric03uec/centos    ##replace with your repo and image name
