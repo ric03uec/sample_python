@@ -10,7 +10,7 @@ python:
  # - 3.5
   
 runtime:
-  nodePool: cus_u14
+  nodePool: cus_u16
   
 build:
   cache: true
