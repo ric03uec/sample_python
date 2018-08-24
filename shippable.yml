@@ -9,8 +9,8 @@ python:
  # - 3.3
  # - 3.5
   
-runtime:
-  nodePool: cus_rhel7
+#runtime:
+#  nodePool: cus_rhel7
   
 build:
   cache: true
@@ -23,6 +23,9 @@ build:
     
   ci:
     - uname -a
+    - wget https://www.gutenberg.org/files/43598/43598-h/43598-h.htm
+    - cat 43598-h.htm
+    - cat 43598-h.htm  | wc -l
     - echo "Hello, World!"
     - cat $SHIPPABLE_BUILD_DIR/build_number || true
     - echo $SHIPPABLE_BUILD_NUMBER > $SHIPPABLE_BUILD_DIR/build_number
