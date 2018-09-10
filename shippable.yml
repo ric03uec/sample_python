@@ -9,8 +9,8 @@ python:
  # - 3.3
  # - 3.5
   
-#runtime:
-#  nodePool: cus_rhel7
+runtime:
+  nodePool: cus_aarch_u16
   
 build:
   cache: true
