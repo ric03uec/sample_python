@@ -8,9 +8,11 @@ python:
  # - 3.2
  # - 3.3
  # - 3.5
-  
-runtime:
-  nodePool: cus_aarch_u16
+ 
+services:
+  - cassandra
+#runtime:
+#  nodePool: cus_aarch_u16
   
 build:
   cache: true
