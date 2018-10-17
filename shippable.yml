@@ -16,15 +16,18 @@ runtime:
   - nodePool: shippable_shared_aarch32
     build:
       pre_ci_boot:
-        env: RUNTIME=AARCH_Ubuntu_16
+        options: "-e RUNTIME=AARCH_Ubuntu_16"
+#        env: RUNTIME=AARCH_Ubuntu_16
   - nodePool: dynamic_u16_xlarge
     build:
       pre_ci_boot:
-        env: RUNTIME=dynamic_u16_xlarge
+        options: "-e RUNTIME=dynamic_u16_xlarge"
+#        env: RUNTIME=dynamic_u16_xlarge
   - nodePool: dynamic_u14_xlarge
     build:
       pre_ci_boot:
-        env: RUNTIME=Ubuntu_14
+        options: "-e RUNTIME=Ubuntu_14"
+#        env: RUNTIME=Ubuntu_14
   
 #matrix:  
 ##  include:
