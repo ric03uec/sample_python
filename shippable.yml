@@ -35,9 +35,9 @@ runtime:
 #      nodePool: shippable_shared_aarch32
       
 build:
-  cache: true
-  cache_dir_list:
-    - $SHIPPABLE_BUILD_DIR/shippable.yml
+  #cache: true
+  #cache_dir_list:
+  #  - $SHIPPABLE_BUILD_DIR/shippable.yml
     
   #pre_ci_boot:
   #  image_name: ric03uec/centos    ##replace with your repo and image name
@@ -48,9 +48,9 @@ build:
     - echo "Hello, World!"
     - cat $SHIPPABLE_BUILD_DIR/build_number || true
     - echo $SHIPPABLE_BUILD_NUMBER > $SHIPPABLE_BUILD_DIR/build_number
-    #- env
-    - env | grep RUNTIME
-    - python --version
+    - env
+    #- env | grep RUNTIME
+    - python --version | echo
     - sleep 10
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
