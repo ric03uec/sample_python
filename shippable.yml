@@ -16,15 +16,14 @@ python:
 #  - nodePool: dynamic_u16_xlarge
 #  - nodePool: dynamic_u14_xlarge
   
-env:
-  matrix:  
-    include:
-      - python: 2.7
-        nodePool: dynamic_u14_xlarge
-      - python: 2.7
-        nodePool: dynamic_u16_xlarge
-      - python: 2.7
-        nodePool: shippable_shared_aarch32
+matrix:  
+  include:
+    - python: 2.7
+      nodePool: dynamic_u14_xlarge
+    - python: 2.7
+      nodePool: dynamic_u16_xlarge
+    - python: 2.7
+      nodePool: shippable_shared_aarch32
       
 build:
   cache: true
