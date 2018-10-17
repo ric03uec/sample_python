@@ -14,14 +14,17 @@ python:
 
 runtime:
   - nodePool: shippable_shared_aarch32
-    pre_ci_boot:
-      env: RUNTIME=AARCH_Ubuntu_16
+    build:
+      pre_ci_boot:
+        env: RUNTIME=AARCH_Ubuntu_16
   - nodePool: dynamic_u16_xlarge
-    pre_ci_boot:
-      env: RUNTIME=dynamic_u16_xlarge
+    build:
+      pre_ci_boot:
+        env: RUNTIME=dynamic_u16_xlarge
   - nodePool: dynamic_u14_xlarge
-    pre_ci_boot:
-      env: RUNTIME=Ubuntu_14
+    build:
+      pre_ci_boot:
+        env: RUNTIME=Ubuntu_14
   
 #matrix:  
 ##  include:
