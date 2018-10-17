@@ -15,19 +15,19 @@ python:
 runtime:
   - nodePool: shippable_shared_aarch32
     build:
-      pre_ci_boot:
-        options: "-e RUNTIME=AARCH_Ubuntu_16"
-#        env: RUNTIME=AARCH_Ubuntu_16
+      ci:
+        - export RUNTIME="shippable_shared_aarch32"
+        - echo "Add other CI commands"
   - nodePool: dynamic_u16_xlarge
     build:
-      pre_ci_boot:
-        options: "-e RUNTIME=dynamic_u16_xlarge"
-#        env: RUNTIME=dynamic_u16_xlarge
+      ci:
+        - export RUNTIME="dynamic_Ubuntu_16"
+        - echo "Add other CI commands"
   - nodePool: dynamic_u14_xlarge
     build:
-      pre_ci_boot:
-        options: "-e RUNTIME=Ubuntu_14"
-#        env: RUNTIME=Ubuntu_14
+      ci:
+        - export RUNTIME="dynamic_Ubuntu_14"
+        - echo "Add other CI commands"
   
 #matrix:  
 ##  include:
