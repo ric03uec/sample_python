@@ -11,11 +11,21 @@ python:
  
 #services:
 #  - cassandra
-runtime:
-  - nodePool: shippable_shared_aarch32
-  - nodePool: dynamic_u16_xlarge
-  - nodePool: dynamic_u14_xlarge
+#runtime:
+#  - nodePool: shippable_shared_aarch32
+#  - nodePool: dynamic_u16_xlarge
+#  - nodePool: dynamic_u14_xlarge
   
+env:
+  matrix:  
+    include:
+      - python: 2.7
+        nodePool: dynamic_u14_xlarge
+      - python: 2.7
+        nodePool: dynamic_u16_xlarge
+      - python: 2.7
+        nodePool: shippable_shared_aarch32
+      
 build:
   cache: true
   cache_dir_list:
