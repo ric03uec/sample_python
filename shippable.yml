@@ -11,18 +11,22 @@ python:
  
 #services:
 #  - cassandra
-#runtime:
-#  - nodePool: shippable_shared_aarch32
-#  - nodePool: dynamic_u16_xlarge
-#  - nodePool: dynamic_u14_xlarge
+
+runtime:
+  - nodePool: shippable_shared_aarch32
+  - nodePool: dynamic_u16_xlarge
+  - nodePool: dynamic_u14_xlarge
   
 matrix:  
   include:
     - python: 2.7
+      env: RUNTIME=Ubuntu_14
       nodePool: dynamic_u14_xlarge
     - python: 2.7
+      env: RUNTIME=Ubuntu_16
       nodePool: dynamic_u16_xlarge
     - python: 2.7
+      env: RUNTIME=AARCH_Ubuntu_16
       nodePool: shippable_shared_aarch32
       
 build:
@@ -39,8 +43,8 @@ build:
     - echo "Hello, World!"
     - cat $SHIPPABLE_BUILD_DIR/build_number || true
     - echo $SHIPPABLE_BUILD_NUMBER > $SHIPPABLE_BUILD_DIR/build_number
-    - env
-    - echo $PATH
+    #- env
+    - env | grep RUNTIME
     - python --version
     - sleep 10
     - mkdir -p shippable/testresults
@@ -49,10 +53,10 @@ build:
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-    - sudo docker --version
-    - sudo docker ps -a
-    - python $SHIPPABLE_BUILD_DIR/ttyTest.py
-    - sudo docker images
+    #- sudo docker --version
+    #- sudo docker ps -a
+    #- python $SHIPPABLE_BUILD_DIR/ttyTest.py
+    #- sudo docker images
     
   push:
     - echo "PUSH step done"
