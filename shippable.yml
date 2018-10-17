@@ -14,20 +14,25 @@ python:
 
 runtime:
   - nodePool: shippable_shared_aarch32
-  - nodePool: dynamic_u16_xlarge
-  - nodePool: dynamic_u14_xlarge
-  
-matrix:  
-  include:
-    - python: 2.7
-      env: RUNTIME=Ubuntu_14
-      nodePool: dynamic_u14_xlarge
-    - python: 2.7
-      env: RUNTIME=Ubuntu_16
-      nodePool: dynamic_u16_xlarge
-    - python: 2.7
+    pre_ci_boot:
       env: RUNTIME=AARCH_Ubuntu_16
-      nodePool: shippable_shared_aarch32
+  - nodePool: dynamic_u16_xlarge
+    pre_ci_boot:
+      env: RUNTIME=dynamic_u16_xlarge
+  - nodePool: dynamic_u14_xlarge
+    pre_ci_boot:
+      env: RUNTIME=Ubuntu_14
+  
+#matrix:  
+##  include:
+#    - python: 2.7
+#      env: RUNTIME=Ubuntu_14
+#      nodePool: dynamic_u14_xlarge
+#    - python: 2.7
+#      env: RUNTIME=Ubuntu_16
+#      nodePool: dynamic_u16_xlarge
+#    - python: 2.7     
+#      nodePool: shippable_shared_aarch32
       
 build:
   cache: true
