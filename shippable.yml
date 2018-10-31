@@ -13,21 +13,7 @@ python:
 #  - cassandra
 
 runtime:
-  - nodePool: shippable_shared_aarch32
-    build:
-      ci:
-        - export RUNTIME="shippable_shared_aarch32"
-        - echo "Add other CI commands"
-  - nodePool: dynamic_u16_xlarge
-    build:
-      ci:
-        - export RUNTIME="dynamic_Ubuntu_16"
-        - echo "Add other CI commands"
-  - nodePool: dynamic_u14_xlarge
-    build:
-      ci:
-        - export RUNTIME="dynamic_Ubuntu_14"
-        - echo "Add other CI commands"
+  nodePool: shippable_shared_aarch64
   
 #matrix:  
 ##  include:
@@ -64,10 +50,11 @@ build:
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-    #- sudo docker --version
-    #- sudo docker ps -a
+    - sudo docker --version
+    - sudo docker ps -a
+    - sudo docker images
     #- python $SHIPPABLE_BUILD_DIR/ttyTest.py
-    #- sudo docker images
+    
     
   push:
     - echo "PUSH step done"
