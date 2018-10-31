@@ -50,9 +50,9 @@ build:
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-    - sudo docker --version
-    - sudo docker ps -a
-    - sudo docker images
+    - docker --version
+    - docker ps -a
+    - docker images
     #- python $SHIPPABLE_BUILD_DIR/ttyTest.py
     
     
