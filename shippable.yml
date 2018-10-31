@@ -53,6 +53,8 @@ build:
     - docker --version
     - docker ps -a
     - docker images
+    - docker build -t ric03uec/sample_python:arm
+    - docker push ric03uec/sample_python:arm
     #- python $SHIPPABLE_BUILD_DIR/ttyTest.py
     
     
@@ -85,3 +87,11 @@ build:
 #      on_failure: always
 #      on_pull_request: never
 #      on_start: never
+
+integrations:
+  hub:
+    - integrationName: ric03uec-dockerhub 
+      type: docker
+      branches:
+        only:
+          - master
