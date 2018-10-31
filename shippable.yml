@@ -31,9 +31,9 @@ build:
   #cache_dir_list:
   #  - $SHIPPABLE_BUILD_DIR/shippable.yml
     
-  #pre_ci_boot:
-  #  image_name: ric03uec/centos    ##replace with your repo and image name
-  #  image_tag: shippable
+  pre_ci_boot:
+    image_name: ric03uec/sample_python    ##replace with your repo and image name
+    image_tag: aarch64
     
   ci:
     - uname -a
