@@ -40,10 +40,10 @@ build:
     - echo "Hello, World!"
     - cat $SHIPPABLE_BUILD_DIR/build_number || true
     - echo $SHIPPABLE_BUILD_NUMBER > $SHIPPABLE_BUILD_DIR/build_number
-    - env
+    #- env
     #- env | grep RUNTIME
-    - python --version | echo
-    - sleep 10
+    #- python --version | echo
+    #- sleep 10
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - pip install -r requirements.txt
