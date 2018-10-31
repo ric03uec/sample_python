@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM arm64v8/ubuntu:16.04
 MAINTAINER ric03uec <devashish@shippable.com>
 
 RUN mkdir -p /sample_python
