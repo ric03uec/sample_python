@@ -12,8 +12,8 @@ python:
 #services:
 #  - cassandra
 
-runtime:
-  nodePool: shippable_shared_aarch64
+#runtime:
+#  nodePool: shippable_shared_aarch64
   
 #matrix:  
 ##  include:
@@ -31,9 +31,9 @@ build:
   #cache_dir_list:
   #  - $SHIPPABLE_BUILD_DIR/shippable.yml
     
-  pre_ci_boot:
-    image_name: ric03uec/sample_python    ##replace with your repo and image name
-    image_tag: aarch64
+#  pre_ci_boot:
+#    image_name: ric03uec/sample_python    ##replace with your repo and image name
+#    image_tag: aarch64
     
   ci:
     - uname -a
@@ -53,9 +53,10 @@ build:
     - docker --version
     - docker ps -a
     - docker images
-    - docker build -t ric03uec/sample_python:arm .
-    - docker push ric03uec/sample_python:arm
-    #- python $SHIPPABLE_BUILD_DIR/ttyTest.py
+    - sleep 300
+#    - docker build -t ric03uec/sample_python:arm .
+#    - docker push ric03uec/sample_python:arm
+#    - python $SHIPPABLE_BUILD_DIR/ttyTest.py
     
     
   push:
