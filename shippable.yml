@@ -12,8 +12,8 @@ python:
 #services:
 #  - cassandra
 
-runtime:
-  nodePool: shippable_shared_aarch32
+#runtime:
+#  nodePool: shippable_shared_aarch32
   
 #matrix:  
 ##  include:
