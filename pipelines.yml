@@ -1,5 +1,5 @@
 resources:
-  - name: sample_node
+  - name: sample_python
     type: gitRepo
     repoPath: ric03uec/sample_python
     configuration:
@@ -14,11 +14,12 @@ pipelines:
     setup:
       runtime: onHost
     steps:
-      - name: step_A
+      - name: test_bash_step
         type: bash
         triggeredBy:
           resources:
-            - sample_node 
+            - sample_python 
         execution:
           onExecute:
+            - echo "First run....."
             - echo "executing step_A..."
