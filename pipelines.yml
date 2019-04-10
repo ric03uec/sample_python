@@ -12,10 +12,14 @@ resources:
 pipelines:
   - name: pipeline_1
     setup:
-      runtime: onHost
+      runtime: host
     steps:
       - name: test_bash_step
         type: bash
+        configuration:
+          affinityGroup: test_affinity_group
+        setup:
+          runtime: host
         triggeredBy:
           resources:
             - sample_python 
