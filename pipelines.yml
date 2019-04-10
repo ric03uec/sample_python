@@ -1,0 +1,24 @@
+resources:
+  - name: sample_node
+    type: gitRepo
+    repoPath: ankul-shippable/sample_node
+    configuration:
+      integrationName: github-int
+      branches:
+        only: master
+    initialVersion:
+      sha: master
+
+pipelines:
+  - name: pipeline_1
+    setup:
+      runtime: onHost
+    steps:
+      - name: step_A
+        type: bash
+        triggeredBy:
+          resources:
+            - sample_node 
+        execution:
+          onExecute:
+            - echo "executing step_A..."
