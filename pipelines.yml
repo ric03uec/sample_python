@@ -1,9 +1,9 @@
 resources:
   - name: sample_node
     type: gitRepo
-    repoPath: ankul-shippable/sample_node
+    repoPath: ric03uec/sample_python
     configuration:
-      integrationName: github-int
+      integrationName: ric03uec-github
       branches:
         only: master
     initialVersion:
